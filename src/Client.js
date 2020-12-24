@@ -32,9 +32,7 @@ module.exports = class Client extends EventEmitter {
         
         await fetch(`https://api.nasa.gov/planetary/apod?api_key=${this.API_KEY}&hd=${hd}`)
             .then(res => res.json())
-            .then(body => {
-                return body["url"];
-            });
+            .then(body => body.url);
     };
 
 };
