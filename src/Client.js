@@ -26,13 +26,21 @@ module.exports = class Client extends EventEmitter {
      * @returns {string} URL de l'image
      */
 
-    async APOD (hd) {
+    async APOD (message, hd) {
+        if(!message) console.error("Vous devez préciser le paramètre 'message', (événement message)");
+
         if(!hd) console.error("Vous devez préciser si l'image doit être renvoyée en HD. \n- true : Force l'image à être en HD \n- false : Ne force pas l'image à être en HD.")
         if(typeof hd !== "boolean") console.error("HD doit être de type Boolean");
         
         await fetch(`https://api.nasa.gov/planetary/apod?api_key=${this.API_KEY}&hd=${hd}`)
             .then(res => res.json())
-            .then(body => body.url);
+            .then(body => {
+                message.channel.send({
+                    files: [
+                        body.url
+                    ]
+                });
+            });
     };
 
 };
