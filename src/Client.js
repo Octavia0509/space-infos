@@ -30,7 +30,7 @@ module.exports = class Client extends EventEmitter {
         if(!hd) console.error("Vous devez préciser si l'image doit être renvoyée en HD. \n- true : Force l'image à être en HD \n- false : Ne force pas l'image à être en HD.")
         if(typeof hd !== "boolean") console.error("HD doit être de type Boolean");
         
-        await fetch(`https://api.nasa.gov/planetary/apod?api_key=${this.API_KEY}&hd=${hd}`);
+        await fetch(`https://api.nasa.gov/planetary/apod?api_key=${this.API_KEY}&hd=${hd}`)
             .then(res => res.json())
             .then(body => {
                 return body["url"];
