@@ -1,0 +1,26 @@
+{
+  "name": "space-infos",
+  "version": "0.0.1",
+  "description": "Vous permet d'obtenir des informations sur l'espace, et son histoire",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Octavia0509/space-infos.git"
+  },
+  "keywords": [
+    "space",
+    "space-infos"
+  ],
+  "author": "Lucas D. (Oϲτανια#5573)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Octavia0509/space-infos/issues"
+  },
+  "homepage": "https://github.com/Octavia0509/space-infos#readme",
+  "dependencies": {
+    "node-fetch": "^2.6.1"
+  }
+}
