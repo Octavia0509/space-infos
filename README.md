@@ -18,6 +18,8 @@
 
 ### 🏠 [Accueil](https://github.com/Octavia0509/space-infos#readme)
 
+<a href="https://nodei.co/npm/space-infos/"><img src="https://nodei.co/npm/space-infos.png?downloads=true&downloadRank=true&stars=true"></a>
+
 ## Installer
 
 ```sh
