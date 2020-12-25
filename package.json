@@ -1,6 +1,6 @@
 {
   "name": "space-infos",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Vous permet d'obtenir des informations sur l'espace, et son histoire",
   "main": "main.js",
   "scripts": {
