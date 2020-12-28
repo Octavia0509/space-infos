@@ -1,5 +1,7 @@
 const { EventEmitter } = require('events');
 const fetch = require('node-fetch');
+const { MessageEmbed } = require("discord.js")
+const moment = require("moment")
 
 module.exports = class Client extends EventEmitter {
 
@@ -35,12 +37,15 @@ module.exports = class Client extends EventEmitter {
         await fetch(`https://api.nasa.gov/planetary/apod?api_key=${this.API_KEY}&hd=${hd}`)
             .then(res => res.json())
             .then(body => {
-                message.channel.send({
-                    files: [
-                        body.url
-                    ]
-                });
-            });
+            
+            let APODEmbed = new MessageEmbed()
+            .setTitle(`**${body.title}**`)
+            .setImage(`${hd === true? hdurl : url}`)
+            .setDescription(body.explanation)
+            .setFooter(`${body.copyright} ~ ${moment(body.date).locale('fr').format('LLL')}`)
+            .setColor("RANDOM");
+       
+            message.channel.send({APODEmbed});
+        });
     };
-
 };
