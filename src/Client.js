@@ -40,7 +40,7 @@ module.exports = class Client extends EventEmitter {
             
             let APODEmbed = new MessageEmbed()
             .setTitle(`**${body.title}**`)
-            .setImage(`${hd === true? hdurl : url}`)
+            .setImage(`${hd === true? body.url : body.hdurl}`)
             .setDescription(body.explanation)
             .setFooter(`${body.copyright} ~ ${moment(body.date).locale('fr').format('LLL')}`)
             .setColor("RANDOM");
